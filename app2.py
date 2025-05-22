@@ -10,7 +10,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
 def run(server_class=HTTPServer, handler_class=SimpleHandler, port=5000):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    print(f'Starting server on port {port}...')
+    print('Starting server on port ' + str(port) + '...')
     httpd.serve_forever()
 
 if __name__ == '__main__':

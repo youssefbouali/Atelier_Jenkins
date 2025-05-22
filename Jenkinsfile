@@ -29,14 +29,14 @@ pipeline {
             } 
         } 
         
-        stage('Deploy') { 
-            steps { 
-                sh 'echo "Deploying the application..."' 
-                sh "ssh youssef@192.168.43.183 'docker pull ${DOCKER_HUB_CREDENTIALS_USR}/my-python-app:latest'" 
-                sh "ssh youssef@192.168.43.183 'docker stop my-python-app || true'" 
-                sh "ssh youssef@192.168.43.183 'docker rm my-python-app || true'" 
-                sh "ssh youssef@192.168.43.183 'docker run -d -p 5000:5000 --name my-python-app ${DOCKER_HUB_CREDENTIALS_USR}/my-python-app:latest'" 
-            } 
-        } 
+        //stage('Deploy') { 
+        //    steps { 
+        //        sh 'echo "Deploying the application..."' 
+        //        sh "ssh user@remote-server 'docker pull ${DOCKER_HUB_CREDENTIALS_USR}/my-python-app:latest'" 
+        //        sh "ssh user@remote-server 'docker stop my-python-app || true'" 
+        //        sh "ssh user@remote-server 'docker rm my-python-app || true'" 
+        //        sh "ssh user@remote-server 'docker run -d -p 5000:5000 --name my-python-app ${DOCKER_HUB_CREDENTIALS_USR}/my-python-app:latest'" 
+        //    } 
+        //} 
     }
 }
